@@ -13,7 +13,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-      - name: percona
+      - name: "percona"
         image: objectiflibre/percona-galera:5.7
         imagePullPolicy: Always
         args: ['--ignore-db-dir=lost+found']
@@ -33,7 +33,7 @@ spec:
             command: ["mysql", "-h", "127.0.0.1", "-e", "SELECT 1"]
           initialDelaySeconds: 5
           timeoutSeconds: 1
-      - name: xtrabackup
+      - name: "xtrabackup"
         image: objectiflibre/percona-galera:5.7
         imagePullPolicy: Always
         ports:
@@ -58,7 +58,7 @@ spec:
         configMap:
           name: percona
       initContainers:
-      - name: percona-init
+      - name: "percona-init"
         image: objectiflibre/percona-galera:5.7
         imagePullPolicy: Always
         command:
@@ -103,7 +103,7 @@ spec:
   - metadata:
       name: percona
       annotations:
-        volume.beta.kubernetes.io/storage-class: standard
+        volume.beta.kubernetes.io/storage-class: rook-block
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
