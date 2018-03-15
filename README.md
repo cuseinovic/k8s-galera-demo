@@ -20,7 +20,7 @@ volumeClaimTemplates:
 ```
 ## Environment Variables
 
-You can adjust the configuration of your container by passing one or more environment variable in statefullset.yaml file
+You can adjust the configuration of your container by passing one or more environment variable in statefulset.yaml file
 
 #### MYSQL_ROOT_PASSWORD
 This variable is mandatory and specifies the password that will be set for the root superuser account.
