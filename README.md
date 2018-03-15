@@ -22,13 +22,13 @@ volumeClaimTemplates:
 
 You can adjust the configuration of your container by passing one or more environment variable in statefullset.yaml file
 
-### MYSQL_ROOT_PASSWORD
+#### MYSQL_ROOT_PASSWORD
 This variable is mandatory and specifies the password that will be set for the root superuser account.
 
-### MYSQL_DATABASE
+#### MYSQL_DATABASE
 Specify the name of a database to be created on container. If a user/password was supplied (see below) then that user will be granted superuser access (corresponding to GRANT ALL) to this database.
 
-### MYSQL_USER, MYSQL_PASSWORD
+#### MYSQL_USER, MYSQL_PASSWORD
 Create a new user and set the user's password. This user will be granted superuser permissions for the database specified by the MYSQL_DATABASE variable.
 
 ## Usage
