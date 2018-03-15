@@ -9,6 +9,5 @@ spec:
   ports:
   - name: percona
     port: 3306
-  clusterIP: None
   selector:
     app: percona
