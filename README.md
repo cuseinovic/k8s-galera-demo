@@ -1,3 +1,40 @@
-![Objectif Libre](https://www.objectif-libre.com/wp-content/uploads/2015/04/sans-baseline-long-fblanc.png "Logo OL")
+It's a fork of the project k8s-galera-demo from ObjectifLibre
 
-Une description détaillée des fichiers de ce dépôt est présente [ici](https://www.objectif-libre.com/fr/blog/2017/08/22/kubernetes-et-galera/.).
+##Prerequisite
+
+- K8S cluster
+- Rook
+- kube config 
+
+##Storageclass
+
+I used the project rook to create a ceph cluster inside my nodes k8s
+You can find this project [here](https://github.com/rook/rook)
+
+```
+volumeClaimTemplates:
+- metadata:
+    name: percona
+    annotations:
+      volume.beta.kubernetes.io/storage-class: rook-block
+```
+
+##Usage
+
+- Create Namespace
+```
+./create-namespace.sh
+```
+- Deploy the service
+```
+kubectl create -f svc.yaml
+```
+- Add configmap
+```
+kubectl create -f configmap.yaml
+```
+- Deploy your statefulset
+```
+kubectl create -f statefulset.yaml
+```
+
