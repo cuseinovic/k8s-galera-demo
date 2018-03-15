@@ -1,12 +1,12 @@
 It's a fork of the project k8s-galera-demo from ObjectifLibre
 
-##Prerequisite
+## Prerequisite
 
 - K8S cluster
 - Rook
 - kube config 
 
-##Storageclass
+## Storageclass
 
 I used the project rook to create a ceph cluster inside my nodes k8s
 You can find this project [here](https://github.com/rook/rook)
@@ -19,7 +19,7 @@ volumeClaimTemplates:
       volume.beta.kubernetes.io/storage-class: rook-block
 ```
 
-##Usage
+## Usage
 
 - Create Namespace
 ```
