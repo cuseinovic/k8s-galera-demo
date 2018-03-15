@@ -21,19 +21,19 @@ volumeClaimTemplates:
 
 ## Usage
 
-- Create Namespace
+Create Namespace
 ```
 ./create-namespace.sh
 ```
-- Deploy the service
+Deploy the service
 ```
 kubectl create -f svc.yaml
 ```
-- Add configmap
+Add configmap
 ```
 kubectl create -f configmap.yaml
 ```
-- Deploy your statefulset
+Deploy your statefulset
 ```
 kubectl create -f statefulset.yaml
 ```
