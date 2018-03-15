@@ -18,8 +18,14 @@ spec:
         imagePullPolicy: Always
         args: ['--ignore-db-dir=lost+found']
         env:
-        - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          value: "1"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "myrootpassword"
+        - name: MYSQL_DATABASE
+          value: "mydatabase"
+        - name: MYSQL_USER
+          value: "myuser"
+        - name: MYSQL_PASSWORD
+          value: "myuserpassword"
         ports:
         - containerPort: 3306
           name: mysql
